@@ -6,7 +6,7 @@ from custom_errors import ConfigError, CustomError
 import os
 
 
-class PlaylistDownloader():
+class VideoDownloader():
     def __init__(self, video_url: str) -> None:
         self.video_url = video_url
     
@@ -23,7 +23,8 @@ class PlaylistDownloader():
         video = YouTube(self.video_url)
         self.show_download_options(video)
         
-        chosen_option = input("choose an option from the options_ids ")
+        chosen_option = input("choose an option from the options_ids: ")
+        
         try:
             chosen_option = int(chosen_option)
         except:
@@ -40,11 +41,11 @@ if __name__ == '__main__':
         video_url = sys.argv[1]
         
         if not re.search(r'playlist', video_url):
-            playlist_downloader = PlaylistDownloader(
+            downloader = VideoDownloader(
                 video_url=video_url
             )
             
-            playlist_downloader.start_download()
+            downloader.start_download()
    
    except CustomError as ex:
        print(ex.message)
