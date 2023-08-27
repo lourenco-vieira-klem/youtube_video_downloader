@@ -16,7 +16,7 @@ pipenv shell
 ```bash
 python main.py https://www.youtube.com/watch?v=UX6K7waag5Q
 
-## Não pode ser uma url de playlist.
+## Pode ser uma url de playlist, para cada video da playlist o script apresentara as opções de stream disponiveis.
 ```
 
 ## Escolha a opção desejada entre os options_ids apresentados.
